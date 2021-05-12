@@ -10,8 +10,8 @@ ENV PATH /usr/src/app/node_modules/.bin:$PATH
 # install and cache app dependencies
 COPY package.json .
 COPY package-lock.json .
-RUN npm ci
-RUN npm install react-scripts@4.0.0 prettier@2.1.1 eslint@7.13.0 -g --silent
+RUN npm ci --silcent
+RUN npm install react-scripts@4.0.0 prettier@2.1.1 eslint@7.13.0 -g --silent -legacy-peer-deps
 
 # start app
 CMD ["npm", "start"]
